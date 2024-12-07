@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #game-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #question {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .answer {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .answer:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="question">What is 5 + 3?</div>
+        <div>
+            <button class="answer" onclick="checkAnswer(6)">6</button>
+            <button class="answer" onclick="checkAnswer(8)">8</button>
+            <button class="answer" onclick="checkAnswer(10)">10</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(selectedAnswer) {
+            const correctAnswer = 8;
+            const result = document.getElementById('result');
+
+            if (selectedAnswer === correctAnswer) {
+                result.textContent = 'Correct! 🎉';
+                result.style.color = 'green';
+            } else {
+                result.textContent = 'Wrong! Try again. ❌';
+                result.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
